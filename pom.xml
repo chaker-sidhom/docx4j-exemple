@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>docx4j-exemple</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+    <dependencies>
+
+        <!--  choose a docx4j-JAXB implementation, one ONLY of the 3 following :-->
+
+        <dependency>
+            <groupId>org.docx4j</groupId>
+            <artifactId>docx4j-JAXB-ReferenceImpl</artifactId>
+            <version>8.3.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.docx4j</groupId>
+            <artifactId>docx4j-docx-anon</artifactId>
+            <version>8.3.8</version>
+        </dependency>
+
+        <!--
+                <dependency>
+                    <groupId>org.docx4j</groupId>
+                    <artifactId>docx4j-JAXB-ReferenceImpl</artifactId>
+                    <version>${project.version}</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.docx4j</groupId>
+                    <artifactId>docx4j-JAXB-MOXy</artifactId>
+                    <version>${project.version}</version>
+                </dependency>
+             -->
+
+        <!--  choose your preferred logging implementation, for example: -->
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.10</version>
+        </dependency>
+        <!--  1.3.0-alpha4 does not play nice with slf4j-api-1.7.26, only 1.8.0-beta2 -->
+
+        <!--
+                <dependency>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-slf4j-impl</artifactId>
+                    <version>2.17.1</version>
+                </dependency> -->
+        <!--  log4j-slf4j18-impl does not play nice with slf4j-api-1.7.26, only 1.8.0-beta2 -->
+
+        <!--  logging config files for log4j2 and logback can be found in:-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.26</version>
+        </dependency>
+
+        <!-- If you want to use Saxon for XPath, uncomment this, and include
+
+                    XPathFactoryUtil.setxPathFactory(new net.sf.saxon.xpath.XPathFactoryImpl());
+
+       <dependency>
+         <groupId>net.sf.saxon</groupId>
+         <artifactId>Saxon-HE</artifactId>
+         <version>9.9.0-2</version>
+       </dependency>
+       -->
+
+        <!-- Uncomment if javax.xml.stream is missing from your env (shouldn't be necessary in Java 8).  This provides that via META-INF/services.
+             Or you can use: System.setProperty("javax.xml.stream.XMLInputFactory", "com.ctc.wstx.stax.WstxInputFactory");
+
+                <dependency>
+                    <groupId>com.fasterxml.woodstox</groupId>
+                    <artifactId>woodstox-core</artifactId>
+                    <version>5.2.0</version>
+                </dependency>
+              -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.2.8</version>
+        </dependency>
+    </dependencies>
+</project>
